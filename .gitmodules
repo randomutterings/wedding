@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/nifty-generators"]
+	path = vendor/plugins/nifty-generators
+	url = git://github.com/ryanb/nifty-generators.git
