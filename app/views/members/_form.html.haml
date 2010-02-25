@@ -1,0 +1,12 @@
+- form_for @member do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :bio
+    %br
+    = f.text_area :bio
+  %p
+    = f.submit "Submit"

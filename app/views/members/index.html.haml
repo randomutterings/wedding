@@ -1,0 +1,14 @@
+- title "Members"
+
+%table
+  %tr
+    %th Name
+    %th Bio
+  - for member in @members
+    %tr
+      %td= h member.name
+      %td= h member.bio
+      %td= link_to 'Edit', edit_member_path(member)
+      %td= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Member", new_member_path
