@@ -1,3 +1,6 @@
 [submodule "vendor/plugins/nifty-generators"]
 	path = vendor/plugins/nifty-generators
 	url = git://github.com/ryanb/nifty-generators.git
+[submodule "vendor/plugins/paperclip"]
+	path = vendor/plugins/paperclip
+	url = git://github.com/thoughtbot/paperclip.git
