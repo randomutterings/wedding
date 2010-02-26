@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/paperclip"]
 	path = vendor/plugins/paperclip
 	url = git://github.com/thoughtbot/paperclip.git
+[submodule "vendor/plugins/active_merchant"]
+	path = vendor/plugins/active_merchant
+	url = git://github.com/Shopify/active_merchant.git
