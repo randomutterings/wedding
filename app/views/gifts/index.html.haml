@@ -1,13 +1,6 @@
 - title "Gifts"
-
-%table
-  %tr
-    %th Name
-    %th Amount
-  - for gift in @gifts
-    %tr
-      %td= h gift.name
-      %td= h gift.amount
-      %td= link_to 'Destroy', gift, :confirm => 'Are you sure?', :method => :delete
-
-%p= link_to "New Gift", new_gift_path
+      
+- form_tag("https://www.paypal.com/cgi-bin/webscr") do
+  = hidden_field_tag :cmd, "_s-xclick"
+  = hidden_field_tag :hosted_button_id, "A5CAMHVYJPWDJ"
+  = image_submit_tag "contribute_button.png", :alt => "Contribute"

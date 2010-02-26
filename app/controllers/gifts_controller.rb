@@ -4,12 +4,10 @@ class GiftsController < ApplicationController
     @gifts = Gift.all
   end
   
-  def new
-    @gift = Gift.new
-  end
-  
   def create
-    @gift = Gift.new(params[:gift])
+    @gift = Gift.new
+    @gift.name = params[:first_name].params[:last_name]
+    @gift.amount = params[:payment_gross]
     if @gift.save
       flash[:notice] = "Successfully created gift."
       redirect_to gifts_url
