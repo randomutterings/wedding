@@ -1,0 +1,14 @@
+%div{:style => "width:300px;"}
+  #goal{:style => "background-image:url('./images/goal.png');"}
+    - if @percentage_collected > 99
+      = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goal Reached!"
+    - elsif @percentage_collected >= 85
+      = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{number_to_currency(@goal_left)} to go!"
+    - else
+      = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goal #{number_to_currency(@goal)}"
+  - if @percentage_collected < 85
+    #total{:style => "background-image:url('./images/total.png');margin-top:#{@margin_top - 50}px;"}
+      = @total <= @goal ? "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total #{number_to_currency(@total)}" : "&nbsp;"
+  %div{:style => "width:140px;height:420px;background-image:url('./images/thermometer.png')"}
+    %div{:style => "width:140px;height:300px;"}
+      = image_tag('thermometer_fill.png', :style => "height:#{@height}px;width:140px;margin-top:#{@margin_top}px;")

@@ -1,5 +1,18 @@
 - title "Gifts"
-      
+
+- for gift in @gifts
+  %p
+    = h gift.name
+    &nbsp;
+    = h number_to_currency(gift.amount / 100)
+    = link_to 'Edit', edit_gift_path(gift)
+    = link_to 'Destroy', gift, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Gift", new_gift_path
+
+
+= render :partial => 'goal_meter'
+
 - form_tag("https://www.paypal.com/cgi-bin/webscr") do
   = hidden_field_tag :cmd, "_s-xclick"
   = hidden_field_tag :hosted_button_id, "A5CAMHVYJPWDJ"

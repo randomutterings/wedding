@@ -1,0 +1,12 @@
+- form_for @gift do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :amount
+    %br
+    = f.text_field :amount
+  %p
+    = f.submit "Submit"

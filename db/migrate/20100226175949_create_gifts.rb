@@ -2,7 +2,7 @@ class CreateGifts < ActiveRecord::Migration
   def self.up
     create_table :gifts do |t|
       t.string :name
-      t.decimal :amount
+      t.integer :amount
       t.timestamps
     end
   end
