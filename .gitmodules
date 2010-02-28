@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/paperclip"]
 	path = vendor/plugins/paperclip
 	url = git://github.com/thoughtbot/paperclip.git
+[submodule "vendor/plugins/calendar_helper"]
+	path = vendor/plugins/calendar_helper
+	url = git://github.com/topfunky/calendar_helper.git
