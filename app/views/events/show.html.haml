@@ -4,7 +4,7 @@
   %table{:style => "width:300px;margin-left:30px;"}
     %tr
       %th.monthName{:colspan => 2}
-        = @event.scheduled_at_formatted(time = false)
+        = @event.scheduled_at_formatted("date")
     %tr.dayName
       %th{:colspan => 2}
         &nbsp;
@@ -13,7 +13,7 @@
         %td.day
           = link_to e.title, e
         %td.day
-          = e.scheduled_at_formatted(time = true, date = false)
+          = e.scheduled_at_formatted("time")
 
 
 %h2

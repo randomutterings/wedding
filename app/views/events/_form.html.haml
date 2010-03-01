@@ -11,6 +11,6 @@
   %p
     = f.label :scheduled_string
     %br
-    = f.text_field :scheduled_string
+    = f.text_field :scheduled_string, :value => @event.scheduled_at_formatted("chronic")
   %p
     = f.submit "Submit"
