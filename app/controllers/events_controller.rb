@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   
   def new
     @event = Event.new
+    @scheduled_at = Time.now.strftime "%b %d at %l:%M %p"
   end
   
   def create
@@ -31,6 +32,7 @@ class EventsController < ApplicationController
   
   def edit
     @event = Event.find(params[:id])
+    @scheduled_at = @event.scheduled_at_formatted("chronic")
   end
   
   def update

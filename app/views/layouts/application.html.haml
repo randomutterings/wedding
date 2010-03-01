@@ -8,6 +8,8 @@
     = stylesheet_link_tag 'application'
     = stylesheet_link_tag 'calendar/blue/style'
     = yield(:head)
+    - javascript_tag do
+      = yield(:jstemplates)
   
   %body
     #container

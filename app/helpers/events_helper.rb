@@ -5,5 +5,5 @@ module EventsHelper
       events = @events.detect {|event| event.scheduled_at.to_date == d }
       events.blank? ? nil : [link_to(d.mday, event_url(:id => event)), {:class => 'specialDay'}]
     end
-  end
+  end  
 end

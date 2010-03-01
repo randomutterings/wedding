@@ -1,8 +1,9 @@
 class Event < ActiveRecord::Base
   require 'chronic'
-  attr_accessible :title, :description, :scheduled_at, :scheduled_string
+  attr_accessible :title, :description, :scheduled_at, :scheduled_string, :rsvp
   attr_accessor :scheduled_string
-  
+  has_many :rsvps
+  has_many :guests, :through => :rsvps
   validates_presence_of :title  
 
   def validate

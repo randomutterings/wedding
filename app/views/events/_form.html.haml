@@ -11,6 +11,10 @@
   %p
     = f.label :scheduled_string
     %br
-    = f.text_field :scheduled_string, :value => @event.scheduled_at_formatted("chronic")
+    = f.text_field :scheduled_string, :value => @scheduled_at
+  %p
+    = f.label :rsvp
+    %br
+    = f.select("rsvp", { "Yes" => true, "No" => false })
   %p
     = f.submit "Submit"

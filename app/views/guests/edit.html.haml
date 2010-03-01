@@ -1,0 +1,8 @@
+- title "Edit Guest"
+
+= render :partial => 'form'
+
+%p
+  = link_to "Show", guest_path(@guest)
+  |
+  = link_to "View All", guests_path

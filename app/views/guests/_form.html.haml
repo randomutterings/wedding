@@ -1,0 +1,21 @@
+- javascript :defaults, 'delegate'
+
+- form_for @guest do |f|
+  = f.error_messages
+  - content_for :jstemplates do
+    = "var rsvp='#{generate_template(f, :rsvps)}'"
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :email
+    %br
+    = f.text_field :email
+  #rsvps
+    - f.fields_for :rsvps do |rsvp_form|
+      = render :partial => 'rsvp', :locals => { :f => rsvp_form }
+    = link_to 'Add an Event', '#rsvp', :class => "add_nested_item", :rel => "rsvps"
+
+  %p
+    = f.submit "Submit"

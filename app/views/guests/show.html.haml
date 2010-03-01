@@ -1,0 +1,22 @@
+- title "Guest"
+
+%p
+  %strong Name:
+  =h @guest.name
+%p
+  %strong Email:
+  =h @guest.email
+%p
+  %strong RSVPs
+%p
+  - @guest.rsvps.each do |r|
+    = Event.find(r.event_id).title
+    = r.attending
+    %br
+
+%p
+  = link_to "Edit", edit_guest_path(@guest)
+  |
+  = link_to "Destroy", @guest, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", guests_path

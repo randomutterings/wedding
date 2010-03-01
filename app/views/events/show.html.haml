@@ -18,6 +18,7 @@
 
 %h2
   =h @event.title
+  = @event.rsvp == true ? "Click to RSVP" : "No"
 %p
   =h @event.description
 

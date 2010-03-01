@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  guest_id: 1
+  event_id: 1
+  attending: 1
+
+two:
+  guest_id: 1
+  event_id: 1
+  attending: 1
