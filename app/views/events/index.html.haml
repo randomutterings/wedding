@@ -1,0 +1,20 @@
+- title "Events"
+
+#calendar
+  = calendar_view
+
+%table{:cellspacing => 10}
+  - for event in @events
+    %tr
+      %td
+        = h event.title
+      %td
+        = h event.scheduled_at_formatted
+      %td
+        = link_to 'Show', event
+        = link_to 'Edit', edit_event_path(event)
+        = link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+  
+%p= link_to "New Event", new_event_path
+
+.clear

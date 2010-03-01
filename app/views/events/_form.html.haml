@@ -1,0 +1,16 @@
+- form_for @event do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :scheduled_string
+    %br
+    = f.text_field :scheduled_string
+  %p
+    = f.submit "Submit"
