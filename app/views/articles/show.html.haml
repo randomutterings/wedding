@@ -1,6 +1,6 @@
 - title "Article"
 
-.float_right= h @article.published_formatted
+.float_right= h @article.published_on_formatted
 %h4
   = h @article.title
   = link_to 'Edit', edit_article_path(@article)
