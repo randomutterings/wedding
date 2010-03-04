@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :gifts
 
-  map.resources :members
+  map.resources :members, :as => 'party'
 
   
 end
