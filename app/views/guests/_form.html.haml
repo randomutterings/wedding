@@ -13,6 +13,7 @@
     %br
     = f.text_field :email
   #rsvps
+    Events
     - f.fields_for :rsvps do |rsvp_form|
       = render :partial => 'rsvp', :locals => { :f => rsvp_form }
     = link_to 'Add an Event', '#rsvp', :class => "add_nested_item", :rel => "rsvps"

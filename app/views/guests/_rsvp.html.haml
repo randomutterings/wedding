@@ -1,11 +1,6 @@
 .rsvp
   %p
-    = f.label :event_id
-    %br
     = f.collection_select(:event_id, Event.find(:all, :conditions => ['rsvp = ?', true]), :id, :title)
-  %p
-    = f.label :attending
-    %br
-    = f.text_field :attending
-  %p
-    = remove_link_unless_new_record(f)
+    = f.text_field :attending, :class => "integer_field"
+    attending
+    = remove_link_unless_new_record(f, "Event")

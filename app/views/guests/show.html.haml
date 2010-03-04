@@ -1,4 +1,4 @@
-- title "Guest"
+- title "RSVP"
 
 %p
   %strong Name:
@@ -7,11 +7,11 @@
   %strong Email:
   =h @guest.email
 %p
-  %strong RSVPs
-%p
+  %strong Events:
+%p.indented
   - @guest.rsvps.each do |r|
-    = Event.find(r.event_id).title
     = r.attending
+    = Event.find(r.event_id).title
     %br
 
 %p

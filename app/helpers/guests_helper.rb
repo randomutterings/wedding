@@ -1,8 +1,8 @@
 module GuestsHelper
-  def remove_link_unless_new_record(fields)
+  def remove_link_unless_new_record(fields, name)
     out = ''
     out << fields.hidden_field(:_delete)  unless fields.object.new_record?
-    out << link_to("remove", "##{fields.object.class.name.underscore}", :class => 'remove')
+    out << link_to("Remove #{name}", "##{fields.object.class.name.underscore}", :class => 'remove')
     out
   end
 
