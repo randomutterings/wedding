@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :articles
+
   map.resources :guests, :as => 'rsvps'
 
   map.resources :events

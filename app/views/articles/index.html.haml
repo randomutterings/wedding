@@ -1,0 +1,13 @@
+- title "Articles"
+
+- for article in @articles
+  .float_right= h article.published_formatted
+  %h4
+    = h article.title
+    = link_to 'Edit', edit_article_path(article)
+    = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+  %div
+    = h truncate(article.body)
+    = link_to 'Read More...', article
+    
+%p= link_to "New Article", new_article_path
