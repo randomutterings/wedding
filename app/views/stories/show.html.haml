@@ -1,0 +1,13 @@
+- title "Story"
+
+.float_right= h @story.published_on_formatted
+%h4
+  = h @story.title
+  = link_to 'Edit', edit_story_path(@story)
+  = link_to 'Destroy', @story, :confirm => 'Are you sure?', :method => :delete
+
+%div
+  = h @story.body
+
+%p
+  = link_to "View All", stories_path

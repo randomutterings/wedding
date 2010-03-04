@@ -1,0 +1,16 @@
+- form_for @story do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :body
+    %br
+    = f.text_area :body
+  %p
+    = f.label :published_on_string, "Published on"
+    %br
+    = f.text_field :published_on_string, :value => @published_on
+  %p
+    = f.submit "Submit"
