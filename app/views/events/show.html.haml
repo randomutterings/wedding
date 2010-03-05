@@ -18,12 +18,13 @@
 
 %h2
   =h @event.title
-  = @event.rsvp == true ? link_to("RSVP", guest_path) : "No"
 %p
   =h @event.description
 
 %p
+  = link_to("RSVP", guest_path) if @event.rsvp == true
   - if admin?
+    |
     = link_to "Edit", edit_event_path(@event)
     |
     = link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete

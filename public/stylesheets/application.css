@@ -76,9 +76,8 @@ img.bg {
   float: left; }
 
 #calendar {
-  float: right;
-  margin-right: 60px;
-  margin-bottom: 60px; }
+  margin-right: 120px;
+  margin-bottom: 20px; }
 
 #goal {
   float: right;
