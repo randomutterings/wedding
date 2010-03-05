@@ -23,7 +23,7 @@
           %p= link_to "Events", events_path
           %p= link_to "Stories", stories_path
           %p= link_to "Wedding Party", members_path
-          %p= link_to "Registry", gifts_path
+          %p= link_to "Gift Registry", gifts_path
           %p= link_to "RSVP", new_guest_path
           - @pages = Page.all.each do |page|
             %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home"
