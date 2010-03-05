@@ -1,0 +1,48 @@
+= Wedding
+
+A wedding site with news articles, events calendar with rsvp, paypal integrated donation meter, wedding party members, wedding stories, and static pages.
+
+
+== Install
+
+  git clone git://github.com/randomutterings/wedding.git
+  cd wedding
+  mv config/database.sample.yml config/database.yml
+  
+Edit config/database.yml for your environment.
+
+  rake db:migrate RAILS_ENV=production
+  
+  mv config/config.sample.yml config/config.yml
+
+Edit config/config.yml with your information.
+
+
+== Usage
+
+  Once you have the site setup, go to http://your-domain.com/login and enter the password from your config/config.yml.
+
+
+== Troubleshooting and FAQs
+
+<b>I get a missing database error.</b>
+
+Make sure your database.yml is configured for your environment and run
+
+  rake db:migrate RAILS_ENV=production.
+
+<b>Another problem?</b>
+
+Make sure you're using Rails 2.3.5.
+
+
+== Found a bug?
+
+If you are having a problem with the site, first look at the FAQs above. If you still cannot resolve it, please submit an issue here.
+
+http://github.com/randomutterings/wedding/issues
+
+
+== Rails 3
+
+This site does not yet officially work with Rails 3.

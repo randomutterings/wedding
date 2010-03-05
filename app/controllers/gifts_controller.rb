@@ -10,6 +10,7 @@ class GiftsController < ApplicationController
     @margin_top = 300 - @height.to_i
     @percentage_collected = (total_in_cents * 100) / goal_in_cents
     @goal_left = (goal_in_cents - total_in_cents) / 100
+    @page = Page.find_by_permalink("gifts")
   end
   
   def new

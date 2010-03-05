@@ -26,7 +26,7 @@
           %p= link_to "Gift Registry", gifts_path
           %p= link_to "RSVP", new_guest_path
           - @pages = Page.all.each do |page|
-            %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home"
+            %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home" || page.permalink == "gifts"
           - if admin?
             %p= link_to "logout", logout_path
         

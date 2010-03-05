@@ -79,6 +79,9 @@ img.bg {
   margin-right: 120px;
   margin-bottom: 20px; }
 
+#goal_meter {
+  float: right; }
+
 #goal {
   float: right;
   color: #FFFFFF;

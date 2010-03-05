@@ -11,8 +11,11 @@
 
   %p= link_to "New Gift", new_gift_path
 
+#gifts_content
+  = render :partial => "pages/show"
 
-= render :partial => 'goal_meter'
+#goal_meter
+  = render :partial => 'goal_meter'
 
 - form_tag("https://www.paypal.com/cgi-bin/webscr") do
   = hidden_field_tag :cmd, "_s-xclick"
