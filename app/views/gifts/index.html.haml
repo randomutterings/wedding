@@ -15,5 +15,5 @@
 
 - form_tag("https://www.paypal.com/cgi-bin/webscr") do
   = hidden_field_tag :cmd, "_s-xclick"
-  = hidden_field_tag :hosted_button_id, "A5CAMHVYJPWDJ"
+  = hidden_field_tag :hosted_button_id, APP_CONFIG['paypal_button_id']
   = image_submit_tag "contribute_button.png", :alt => "Contribute"

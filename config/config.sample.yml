@@ -1,0 +1,10 @@
+# name the bride and groom
+bride: The Bride
+groom: The Groom
+
+# set admin credentials
+username: admin
+password: secret
+
+# paypal hosted button id
+paypal_button_id: PAYPALHOSTEDBUTTONID

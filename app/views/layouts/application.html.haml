@@ -15,7 +15,7 @@
     =image_tag("background.png", :class => "bg")
     #container
       .names
-        Chris and Melissa
+        = "#{APP_CONFIG['groom']} and #{APP_CONFIG['bride']}"
       #content
         #menu
           %p= link_to "Home", page_permalink_path("home")
