@@ -1,10 +1,10 @@
 body {
-  background-color: #4b7399;
+  color: #c16928;
   font-family: comic sans ms;
   font-size: 14px; }
 
 a {
-  color: #0000FF; }
+  color: #e6a06d; }
   a img {
     border: none; }
 
@@ -26,9 +26,30 @@ p {
 .integer_field {
   width: 20px; }
 
+img.bg {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+#container {
+  position: relative;
+  width: 840px;
+  margin: 0 auto;
+  padding: 0px 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #ffffff url('/images/container_background.png') repeat-y top; }
+
+#content {
+  padding: 0px 40px 0px 40px; }
+
 #menu {
   float: left;
-  padding-right: 50px; }
+  margin-right: 60px; }
 
 #calendar {
   float: right;
@@ -62,14 +83,6 @@ p {
   text-align: center;
   font-size: 18px;
   font-weight: bold; }
-
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px; }
 
 #flash_notice,
 #flash_error {

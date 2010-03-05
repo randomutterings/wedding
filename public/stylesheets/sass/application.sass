@@ -1,13 +1,16 @@
-!primary_color = #4B7399
+// default colors
+!color_light = #E6A06D
+!color_dark = #C16928 
 
+// general styles and classes
 body
-  :background-color = !primary_color
+  :color = !color_dark
   :font
     :family comic sans ms
     :size 14px
 
 a
-  :color #0000FF
+  :color = !color_light
   img
     :border none
 
@@ -16,28 +19,58 @@ p
 
 .clear
   :clear both
-  
+
 .float_left
   :float left
-  
+
 .float_right
   :float right
-  
+
 .indented
   :margin-left 20px
 
 .integer_field
   :width 20px
+
+// styles for site layout
+img.bg
+  // Set rules to fill background
+  :min-height 100%
+  :min-width 1024px
+
+  // Set up proportionate scaling
+  :width 100%
+  :height auto
+
+  // Set up positioning
+  :position fixed
+  :top 0
+  :left 0
+
+#container
+  // position relative so content will show on top of background
+  :position relative
+  :width 840px
+  :margin 0 auto
+  :padding 0px 0px
+  :margin-top 20px
+  :margin-bottom 20px
+  :background #ffffff url('/images/container_background.png') repeat-y top
+
+#content
+  :padding 0px 40px 0px 40px
   
 #menu
   :float left
-  :padding-right 50px
-  
+  :margin-right 60px
+
+// styles for the events page
 #calendar
   :float right
   :margin-right 60px
   :margin-bottom 60px
-
+  
+// styles for the gifts page
 #goal
   :float right
   :color #FFFFFF
@@ -56,6 +89,7 @@ p
   :height 28px
   :width 156px
   
+// styles for the wedding party members
 #member_photo
   :float left
   :padding-right 30px
@@ -67,15 +101,8 @@ p
   :font
     :size 18px
     :weight bold
-    
-#container
-  :width 75%
-  :margin 0 auto
-  :background #fff
-  :padding 20px 40px
-  :border solid 1px black
-  :margin-top 20px
 
+// styles for info and error messages  
 #flash_notice,
 #flash_error
   :padding 5px 8px
