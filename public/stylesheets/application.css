@@ -26,6 +26,10 @@ p {
 .integer_field {
   width: 20px; }
 
+#menu {
+  float: left;
+  padding-right: 50px; }
+
 #calendar {
   float: right;
   margin-right: 60px;
