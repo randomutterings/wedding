@@ -8,7 +8,7 @@
       = link_to 'Edit', edit_article_path(article)
       = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
   %div
-    = h truncate(article.body)
+    = truncate(textilize article.body)
     = link_to 'Read More...', article
 
 -if admin?

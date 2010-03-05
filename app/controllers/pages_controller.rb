@@ -36,7 +36,13 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
       flash[:notice] = "Successfully updated page."
-      redirect_to @page
+      if @page.permalink == "home"
+        redirect_to root_url
+      elsif @page.permalink == "gifts"
+        redirect_to gifts_url
+      else
+        redirect_to @page
+      end
     else
       render :action => 'edit'
     end

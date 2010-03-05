@@ -10,6 +10,7 @@
     = f.text_field :permalink
   %p
     = f.label :content
+    = "&nbsp;(format with #{link_to "textile", "http://redcloth.org/textile/", :target => "blank"})"
     %br
     = f.text_area :content
   %p

@@ -7,7 +7,7 @@
     = link_to 'Edit', edit_article_path(@article)
     = link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete
 
-%div= h @article.body
+%div= textilize @article.body
 
 - if admin?
   %p= link_to "View All", articles_path
