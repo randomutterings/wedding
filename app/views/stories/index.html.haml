@@ -4,10 +4,12 @@
   .float_right= h story.published_on_formatted
   %h4
     = h story.title
-    = link_to 'Edit', edit_story_path(story)
-    = link_to 'Destroy', story, :confirm => 'Are you sure?', :method => :delete
+    -if admin?
+      = link_to 'Edit', edit_story_path(story)
+      = link_to 'Destroy', story, :confirm => 'Are you sure?', :method => :delete
   %div
     = h truncate(story.body)
     = link_to 'Read More...', story
-    
-%p= link_to "New Story", new_story_path
+
+- if admin?
+  %p= link_to "New Story", new_story_path

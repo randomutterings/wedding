@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :authorize, :except => :show
   def index
     @pages = Page.all
   end

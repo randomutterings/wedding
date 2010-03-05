@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sessions
+  
   map.resources :pages
 
   map.resources :stories
@@ -13,7 +15,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :members, :as => 'party'
 
-  map.page_permalink ':permalink', :controller => 'pages', :action => 'show'
-  
   map.root :controller => 'pages', :action => 'show', :permalink => 'home'
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
+  map.page_permalink ':permalink', :controller => 'pages', :action => 'show'
 end

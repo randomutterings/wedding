@@ -13,10 +13,10 @@
   
   %body
     =image_tag("background.png", :class => "bg")
-    #container
+    #container_for_background
       .names
         = "#{APP_CONFIG['groom']} and #{APP_CONFIG['bride']}"
-      #content
+      #container_for_padding
         #menu
           %p= link_to "Home", page_permalink_path("home")
           %p= link_to "News", articles_path
@@ -25,17 +25,19 @@
           %p= link_to "Wedding Party", members_path
           %p= link_to "Gifts", gifts_path
           %p= link_to "RSVP", guests_path
-          %p= link_to "Pages", "javascript:void(0);"
           - @pages = Page.all.each do |page|
             %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home"
+          - if admin?
+            %p= link_to "logout", logout_path
         
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}"
+        #content
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
 
-        - if show_title?
-          %h2=h yield(:title)
+          - if show_title?
+            %h2=h yield(:title)
         
-        = yield
+          = yield
       
         .clear
       =image_tag("footer.png", :style => "vertical-align:bottom;")

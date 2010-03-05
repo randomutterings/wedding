@@ -9,7 +9,9 @@
       %br
       = h member.bio
     .clear &nbsp;
-    = link_to 'Edit', edit_member_path(member)
-    = link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete
+    - if admin?
+      = link_to 'Edit', edit_member_path(member)
+      = link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete
 
-%p= link_to "New Member", new_member_path
+- if admin?
+  %p= link_to "New Member", new_member_path

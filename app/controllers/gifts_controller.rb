@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  
+  before_filter :authorize, :except => :index
   def index
     @gifts = Gift.all
     total_in_cents = @gifts.map(&:amount).sum

@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   def index
     @stories = Story.all
   end

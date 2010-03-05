@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   def index
     @events = Event.all
     if params[:date].nil?

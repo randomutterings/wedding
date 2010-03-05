@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
   def index
     @guests = Guest.all
   end

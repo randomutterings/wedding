@@ -15,8 +15,9 @@
     %br
 
 %p
-  = link_to "Edit", edit_guest_path(@guest)
-  |
-  = link_to "Destroy", @guest, :confirm => 'Are you sure?', :method => :delete
-  |
+  - if admin?
+    = link_to "Edit", edit_guest_path(@guest)
+    |
+    = link_to "Destroy", @guest, :confirm => 'Are you sure?', :method => :delete
+    |
   = link_to "View All", guests_path

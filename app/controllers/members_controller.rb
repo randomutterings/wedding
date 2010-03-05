@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_filter :authorize, :except => :index
   def index
     @members = Member.all
   end

@@ -9,7 +9,9 @@
       %td= h guest.name
       %td= h guest.email
       %td= link_to 'Show', guest
-      %td= link_to 'Edit', edit_guest_path(guest)
-      %td= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete
+      - if admin?
+        %td= link_to 'Edit', edit_guest_path(guest)
+        %td= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete
 
-%p= link_to "New RSVP", new_guest_path
+-if admin?
+  %p= link_to "New RSVP", new_guest_path
