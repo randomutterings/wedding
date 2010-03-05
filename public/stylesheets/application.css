@@ -35,6 +35,19 @@ img.bg {
   top: 0;
   left: 0; }
 
+.names {
+  background: #ffffff url('/images/header.png') no-repeat top;
+  height: 190px;
+  text-align: center;
+  padding-top: 60px;
+  font-family: BickhamScriptProSemibold;
+  font-size: 60px; }
+
+@font-face {
+  font-family: 'BickhamScriptProSemibold';
+  src: url('fonts/BickhamScriptPro-Semibold.eot');
+  src: local('Bickham Script Pro Semibold'), local('BickhamScriptPro-Semibold'), url('fonts/BickhamScriptPro-Semibold.woff') format('woff'), url('fonts/BickhamScriptPro-Semibold.otf') format('opentype'), url('fonts/BickhamScriptPro-Semibold.svg#BickhamScriptPro-Semibold') format('svg'); }
+
 #container {
   position: relative;
   width: 840px;
