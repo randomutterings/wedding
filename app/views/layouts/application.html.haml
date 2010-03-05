@@ -14,7 +14,7 @@
   %body
     =image_tag("background.png", :class => "bg")
     #container_for_background
-      .names
+      #header
         = "#{APP_CONFIG['groom']} and #{APP_CONFIG['bride']}"
       #container_for_padding
         #menu
@@ -23,8 +23,8 @@
           %p= link_to "Events", events_path
           %p= link_to "Stories", stories_path
           %p= link_to "Wedding Party", members_path
-          %p= link_to "Gifts", gifts_path
-          %p= link_to "RSVP", guests_path
+          %p= link_to "Registry", gifts_path
+          %p= link_to "RSVP", new_guest_path
           - @pages = Page.all.each do |page|
             %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home"
           - if admin?
@@ -40,4 +40,4 @@
           = yield
       
         .clear
-      =image_tag("footer.png", :style => "vertical-align:bottom;")
+      #footer &nbsp;

@@ -1,5 +1,6 @@
-- title "New RSVP"
+- title "RSVP"
 
 = render :partial => 'form'
 
-%p= link_to "Back to List", guests_path
+- if admin?
+  %p= link_to "View all", guests_path

@@ -11,6 +11,10 @@ a {
 p {
   padding-left: 10px; }
 
+img {
+  border: 1px solid;
+  border-color: #c16928; }
+
 .clear {
   clear: both; }
 
@@ -35,13 +39,17 @@ img.bg {
   top: 0;
   left: 0; }
 
-.names {
+#header {
   background: #ffffff url('/images/header.png') no-repeat top;
   height: 190px;
   text-align: center;
   padding-top: 60px;
   font-family: BickhamScriptProSemibold;
   font-size: 60px; }
+
+#footer {
+  background: #ffffff url('/images/footer.png') no-repeat bottom;
+  height: 150px; }
 
 @font-face {
   font-family: 'BickhamScriptProSemibold';
@@ -58,11 +66,11 @@ img.bg {
   background: #ffffff url('/images/container_background.png') repeat-y top; }
 
 #container_for_padding {
-  padding: 0px 40px 0px 40px; }
+  padding: 0px 100px 0px 40px; }
 
 #content {
   float: right;
-  width: 580px; }
+  width: 500px; }
 
 #menu {
   float: left; }

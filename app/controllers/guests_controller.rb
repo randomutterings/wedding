@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize, :except => [:new, :create]
   def index
     @guests = Guest.all
   end
@@ -16,8 +16,8 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(params[:guest])
     if @guest.save
-      flash[:notice] = "Successfully created guest."
-      redirect_to @guest
+      flash[:notice] = "Your RSVP has been submitted."
+      redirect_to root_url
     else
       render :action => 'new'
     end

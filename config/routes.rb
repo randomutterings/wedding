@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :events
 
-  map.resources :gifts
+  map.resources :gifts, :as => 'registry'
 
   map.resources :members, :as => 'party'
 

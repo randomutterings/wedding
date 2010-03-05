@@ -16,6 +16,10 @@ a
 
 p
   :padding-left 10px
+  
+img
+  :border 1px solid
+  :border-color = !color_dark
 
 .clear
   :clear both
@@ -47,8 +51,7 @@ img.bg
   :top 0
   :left 0
 
-// embedded font for the couple's names
-.names
+#header
   :background #ffffff url('/images/header.png') no-repeat top
   :height 190px
   :text-align center
@@ -56,7 +59,12 @@ img.bg
   :font
     :family BickhamScriptProSemibold
     :size 60px
-  
+
+#footer
+  :background #ffffff url('/images/footer.png') no-repeat bottom
+  :height 150px
+
+// embedded font for the couple's names  
 @font-face
   :font-family 'BickhamScriptProSemibold'
   :src url('fonts/BickhamScriptPro-Semibold.eot')
@@ -73,11 +81,11 @@ img.bg
   :background #ffffff url('/images/container_background.png') repeat-y top
 
 #container_for_padding
-  :padding 0px 40px 0px 40px
+  :padding 0px 100px 0px 40px
 
 #content
   :float right
-  :width 580px
+  :width 500px
   
 #menu
   :float left
