@@ -5,8 +5,6 @@ body {
 
 a {
   color: #e6a06d; }
-  a img {
-    border: none; }
 
 p {
   padding-left: 10px; }
@@ -44,6 +42,7 @@ img.bg {
   height: 190px;
   text-align: center;
   padding-top: 60px;
+  margin-bottom: 40px;
   font-family: BickhamScriptProSemibold;
   font-size: 60px; }
 
@@ -70,10 +69,15 @@ img.bg {
 
 #content {
   float: right;
-  width: 500px; }
+  width: 500px;
+  margin-right: 10px; }
 
 #menu {
   float: left; }
+
+#slideshow {
+  height: 242px;
+  overflow: hidden; }
 
 #calendar {
   margin-right: 120px;

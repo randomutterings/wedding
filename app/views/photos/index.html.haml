@@ -1,0 +1,15 @@
+- title "Photos for Slideshow"
+
+- for photo in @photos
+  %p
+    #photo
+      = h photo.name
+      %br
+      = link_to(image_tag(photo.photo.url(:medium)), photo)
+    
+    - if admin?
+      = link_to 'Edit', edit_photo_path(photo)
+      = link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete
+
+- if admin?
+  %p= link_to "New Photo", new_photo_path

@@ -1,4 +1,11 @@
-- title @page.name, false
+- javascript('jquery', 'jquery.cycle.lite.min', 'home')
+- title @page.name
+
+#slideshow
+  = render :partial => "slideshow", :collection => @photos
+
+- if admin?
+  = link_to "Edit Slideshow", photos_path
 
 = textilize @page.content
 

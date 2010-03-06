@@ -1,0 +1,11 @@
+- title @photo.name
+
+#photo= image_tag @photo.photo.url(:large)
+
+%p
+  - if admin?
+    = link_to "Edit", edit_photo_path(@photo)
+    |
+    = link_to "Destroy", @photo, :confirm => 'Are you sure?', :method => :delete
+    |
+  = link_to "View All", photos_path

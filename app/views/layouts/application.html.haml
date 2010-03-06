@@ -28,7 +28,9 @@
           - @pages = Page.all.each do |page|
             %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home" || page.permalink == "gifts"
           - if admin?
-            %p= link_to "logout", logout_path
+            %p= link_to "Extra Pages", pages_path
+            %p= link_to "Slideshow Photos", photos_path
+            %p= link_to "Logout", logout_path
         
         #content
           - flash.each do |name, msg|
