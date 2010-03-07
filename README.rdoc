@@ -5,17 +5,39 @@ A wedding site with news articles, events calendar with rsvp, paypal integrated 
 
 == Install
 
+Clone the git repository.
+
   git clone git://github.com/randomutterings/wedding.git
   cd wedding
-  mv config/database.sample.yml config/database.yml
-  
-Edit config/database.yml for your environment.
 
-  rake db:migrate RAILS_ENV=production
-  
+Initialize and update the submodules.
+
+  git submodule init
+  git submodule update
+
+Install RedCloth if your server doesn't have at least 4.2.3.
+
+  gem install RedCloth
+
+Install Chronic if your server doesn't have at least 0.2.3.
+
+  gem install chronic
+
+Move the config sample file.
+
   mv config/config.sample.yml config/config.yml
 
 Edit config/config.yml with your information.
+
+You'll need to create a hosted Paypal button at https://www.paypal.com/us/cgi-bin/?&cmd=_button-designer.  Under step 3, be sure to put the following under "Use Advanced Variables" notify_url=http://www.your-domain-name.com/gifts.  Also put http://www.your-domain-name.com/gifts under take customers to this url when they finish and take customers to this url when they cancel.  If you want to edit your button later, go to http://www.paypal.com under My Account, Profile, More options, then click on My Saved Buttons under Selling Preferences.
+
+Move the database sample file.
+
+  mv config/database.sample.yml config/database.yml  
+
+Edit it for your environment and migrate the database.
+
+  rake db:migrate RAILS_ENV=production
 
 
 == Usage
