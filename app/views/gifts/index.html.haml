@@ -1,13 +1,29 @@
 - title "Registry"
 
 - if admin?
-  - for gift in @gifts
-    %p
-      = h gift.name
-      &nbsp;
-      = h number_to_currency(gift.amount / 100)
-      = link_to 'Edit', edit_gift_path(gift)
-      = link_to 'Destroy', gift, :confirm => 'Are you sure?', :method => :delete
+  %table{:border => 1}
+    %tr
+      %th Name
+      %th Amount
+      %th Payment Status
+      %th txn_id
+      %th Receiver Email
+      %th Payer Email
+      %th Address
+      %th Address Status
+      - for gift in @gifts
+        %tr
+          %td= h gift.name
+          %td= h number_to_currency(gift.amount / 100)
+          %td= h gift.status
+          %td= h gift.txn_id
+          %td= h gift.receiver_email
+          %td= h gift.payer_email
+          %td= "#{gift.address_name}<br/>#{gift.address_street}<br/>#{gift.address_city},&nbsp;#{gift.address_state}&nbsp;#{gift.address_zip}<br/>#{gift.address_country}"
+          %td= h gift.address_status
+          %td
+            = link_to 'Edit', edit_gift_path(gift)
+            = link_to 'Destroy', gift, :confirm => 'Are you sure?', :method => :delete
 
   %p= link_to "New Gift", new_gift_path
 

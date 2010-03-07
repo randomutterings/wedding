@@ -9,4 +9,48 @@
     %br
     = f.text_field :amount
   %p
+    = f.label :status
+    %br
+    = f.text_field :status
+  %p
+    = f.label :txn_id
+    %br
+    = f.text_field :txn_id, :disabled => true
+  %p
+    = f.label :receiver_email
+    %br
+    = f.text_field :receiver_email
+  %p
+    = f.label :payer_email
+    %br
+    = f.text_field :payer_email
+  %p
+    = f.label :address_city
+    %br
+    = f.text_field :address_city
+  %p
+    = f.label :address_country
+    %br
+    = f.text_field :address_country
+  %p
+    = f.label :address_name
+    %br
+    = f.text_field :address_name
+  %p
+    = f.label :address_state
+    %br
+    = f.text_field :address_state
+  %p
+    = f.label :address_status
+    %br
+    = f.text_field :address_status
+  %p
+    = f.label :address_street
+    %br
+    = f.text_field :address_street
+  %p
+    = f.label :address_zip
+    %br
+    = f.text_field :address_zip
+  %p
     = f.submit "Submit"
