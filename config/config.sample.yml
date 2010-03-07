@@ -2,8 +2,7 @@
 bride: The Bride
 groom: The Groom
 
-# set admin credentials
-username: admin
+# set admin password
 password: secret
 
 # paypal hosted button id
