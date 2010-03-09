@@ -5,5 +5,7 @@ groom: The Groom
 # set admin password
 password: secret
 
-# paypal hosted button id
+# paypal ipn information
 paypal_button_id: PAYPALHOSTEDBUTTONID
+paypal_verification_url: http://www.paypal.com
+paypal_verification_post: /cgi-bin/webscr
