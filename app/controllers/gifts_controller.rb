@@ -5,7 +5,7 @@ class GiftsController < ApplicationController
     @gifts = Gift.all
     total_in_cents = @gifts.map(&:amount).sum
     @total = total_in_cents.to_r.to_d / 100
-    goal_in_cents = 500000
+    goal_in_cents = (APP_CONFIG['gift_registry_goal'] * 100).to_i
     @goal = goal_in_cents.to_r.to_d / 100
     @height = (((total_in_cents * 100) / goal_in_cents) * 300) / 100
     @margin_top = 300 - @height.to_i
