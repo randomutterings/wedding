@@ -7,5 +7,3 @@ password: secret
 
 # paypal ipn information
 paypal_button_id: PAYPALHOSTEDBUTTONID
-paypal_verification_url: http://www.paypal.com
-paypal_verification_post: /cgi-bin/webscr

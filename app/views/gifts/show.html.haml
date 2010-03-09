@@ -1,0 +1,44 @@
+- title "Gift"
+
+%p
+  %strong Name:
+  =h @gift.name
+%p
+  %strong Amount:
+  = h number_to_currency(@gift.amount.to_f / 100)
+%p
+  %strong Status:
+  = h @gift.status
+%p
+  %strong txn_id
+  = h @gift.txn_id
+%p
+  %strong Receiver Email
+  = h @gift.receiver_email
+%p
+  %strong Payer Email
+  = h @gift.payer_email
+%p
+  %strong Payer Address
+  = h @gift.address_name
+  %br
+  = h @gift.address_street
+  %br
+  = h @gift.address_city
+  &nbsp;
+  = h @gift.address_state
+  &nbsp;
+  = h @gift.address_zip
+  %br
+  = h @gift.address_country
+%p
+  %strong Address Status
+  = h @gift.address_status
+
+%p
+  - if admin?
+    = link_to "Edit", edit_gift_path(@gift)
+    |
+    = link_to "Destroy", @gift, :confirm => 'Are you sure?', :method => :delete
+    |
+    = link_to "View All", gifts_path
