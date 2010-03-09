@@ -38,7 +38,8 @@ class GiftsController < ApplicationController
       query = 'cmd=_notify-validate'
       params.each_pair {|key, value| query = query + '&' + key + '=' + value unless key == "controller" || key == "action" || key == "commit"}
       begin
-        http = Net::HTTP.start(APP_CONFIG['paypal_verification_url'], 80)
+        http = Net::HTTP.start(APP_CONFIG['paypal_verification_url'], 443)
+        http.use_ssl = true
         response = http.post(APP_CONFIG['paypal_verification_post'], query)
         http.finish
       rescue Net::HTTPError
