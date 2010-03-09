@@ -1,5 +1,6 @@
 class GiftsController < ApplicationController
   before_filter :authorize, :except => :index
+  protect_from_forgery :only => [:update, :destroy]
   def index
     @gifts = Gift.all
     total_in_cents = @gifts.map(&:amount).sum
