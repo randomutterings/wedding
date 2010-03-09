@@ -3,4 +3,5 @@ class Gift < ActiveRecord::Base
                   :payer_email, :address_city, :address_country, :address_country_code, :address_name,
                   :address_state, :address_status, :address_street, :address_zip
   validates_presence_of :name, :amount
+  validates_uniqueness_of :txn_id, :allow_nil => true
 end
