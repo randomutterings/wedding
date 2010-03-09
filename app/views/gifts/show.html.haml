@@ -5,7 +5,7 @@
   =h @gift.name
 %p
   %strong Amount:
-  = h number_to_currency(@gift.amount.to_f / 100)
+  = h number_to_currency(@gift.amount.to_r.to_d / 100)
 %p
   %strong Status:
   = h @gift.status

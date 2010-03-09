@@ -5,7 +5,7 @@
     %p{:style => "text-align:right;"}
       = link_to gift.name, gift
       &nbsp;
-      = h number_to_currency(gift.amount.to_f / 100)
+      = h number_to_currency(gift.amount.to_r.to_d / 100)
       &nbsp;
       = link_to 'Edit', edit_gift_path(gift)
       |
