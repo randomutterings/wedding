@@ -29,7 +29,7 @@ Move the config sample file.
 
 Edit config/config.yml with your information.
 
-You'll need to create a hosted Paypal button at https://www.paypal.com/us/cgi-bin/?&cmd=_button-designer.  Under step 3, be sure to put the following under "Use Advanced Variables" notify_url=http://www.your-domain-name.com/gifts.  Also put http://www.your-domain-name.com/gifts under take customers to this url when they finish and take customers to this url when they cancel.  If you want to edit your button later, go to http://www.paypal.com under My Account, Profile, More options, then click on My Saved Buttons under Selling Preferences.
+You'll need to create a hosted Paypal button at https://www.paypal.com/us/cgi-bin/?&cmd=_button-designer.  Under step 3, be sure to put the following under "Use Advanced Variables" notify_url=http://www.your-domain-name.com/gift_registry.  Also put http://www.your-domain-name.com/gift_registry under take customers to this url when they finish and take customers to this url when they cancel.  If you want to edit your button later, go to http://www.paypal.com under My Account, Profile, More options, then click on My Saved Buttons under Selling Preferences.
 
 Move the database sample file.
 
