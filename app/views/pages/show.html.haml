@@ -1,1 +1,13 @@
-= render :partial => 'show'
+- title @page.name
+
+= render :partial => "home" if params[:permalink] == "home"
+
+= textilize @page.content
+
+- if admin?
+  %p
+    = link_to "Edit", edit_page_path(@page)
+    |
+    = link_to "Destroy", @page, :confirm => 'Are you sure?', :method => :delete
+    |
+    = link_to "New Page", new_page_path

@@ -14,7 +14,11 @@
   %p= link_to "New Gift", new_gift_path
 
 #gifts_content
-  = render :partial => "pages/show"
+  = textilize @page.content
+
+  - if admin?
+    %p
+      = link_to "Edit Page", edit_page_path(@page)
 
 #goal_meter
   = render :partial => 'goal_meter'

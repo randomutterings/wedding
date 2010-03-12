@@ -11,10 +11,7 @@ class PagesController < ApplicationController
     else
       @page = Page.find(params[:id])
     end
-    if params[:permalink] == 'home'
-      @photos = Photo.all
-      render :partial => "home", :layout => "application"
-    end
+    @photos = Photo.all if params[:permalink] == 'home'
   end
   
   def new
