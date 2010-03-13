@@ -6,7 +6,7 @@ require 'ftools'
 require 'aws/s3'
 
 namespace :db do
-  desc "Backup the database to a file. Options: RAILS_ENV=production MAX=3" 
+  desc "Backup the database to a file. Options: RAILS_ENV=production" 
   task :backup => [:environment] do
     AWS::S3::Base.establish_connection!(:access_key_id => APP_CONFIG['access_key_id'], :secret_access_key => APP_CONFIG['secret_access_key'])
     BUCKET = APP_CONFIG['bucket']
