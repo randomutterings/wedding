@@ -2,7 +2,8 @@
 bride: The Bride
 groom: The Groom
 
-# how much many do you want to raise? putting 0 here will disable this functionality
+# how much many do you want to raise?
+# putting 0 here will disable this functionality
 gift_registry_goal: 5000.00
 
 # set admin password
@@ -10,3 +11,10 @@ password: secret
 
 # paypal ipn information
 paypal_button_id: PAYPALHOSTEDBUTTONID
+
+# amazon aws credentials
+# used for offsite database backups
+access_key_id: your-key-id-from-aws
+secret_access_key: your-secret-access-key-from-aws
+bucket: existing-bucket-name
+backups_to_keep: 3

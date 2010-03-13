@@ -47,7 +47,17 @@ Edit it for your environment and migrate the database.
 
 == Usage
 
-  Once you have the site setup, go to http://your-domain.com/login and enter the password from your config/config.yml.
+Once you have the site setup, go to http://your-domain.com/login and enter the password from your config/config.yml.
+
+== Database backup to Amazon S3
+
+To backup your database to Amazon S3, run the following from project root or set it up as a cron job to run automatically.  The following example keeps the last 3 backups in S3
+
+  rake db:backup RAILS_ENV=production MAX=3
+
+If you ever need to restore the database, use the tool of your choice to download the backup from S3 and run.
+
+  gzip -dc production_dump-YYYY-MM-DD_HH-MM-SS.sql.gz | mysql -u root -p <production database>
 
 
 == Troubleshooting and FAQs
