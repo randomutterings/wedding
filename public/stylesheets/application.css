@@ -37,6 +37,11 @@ img.bg {
   top: 0;
   left: 0; }
 
+@font-face {
+  font-family: 'BickhamScriptProSemibold';
+  src: url('fonts/BickhamScriptPro-Semibold.eot');
+  src: local('Bickham Script Pro'), local('BickhamScriptPro-Semibold'), url('fonts/BickhamScriptPro-Semibold.woff') format('woff'), url('fonts/BickhamScriptPro-Semibold.ttf') format('truetype'), url('fonts/BickhamScriptPro-Semibold.svg#BickhamScriptPro-Semibold') format('svg'); }
+
 #header {
   background: #ffffff url('/images/header.png') no-repeat top;
   height: 250px;
@@ -49,11 +54,6 @@ img.bg {
 #footer {
   background: #ffffff url('/images/footer.png') no-repeat bottom;
   height: 150px; }
-
-@font-face {
-  font-family: 'BickhamScriptProSemibold';
-  src: url('fonts/BickhamScriptPro-Semibold.eot');
-  src: local('Bickham Script Pro Semibold'), local('BickhamScriptPro-Semibold'), url('fonts/BickhamScriptPro-Semibold.woff') format('woff'), url('fonts/BickhamScriptPro-Semibold.otf') format('opentype'), url('fonts/BickhamScriptPro-Semibold.svg#BickhamScriptPro-Semibold') format('svg'); }
 
 #container_for_background {
   position: relative;
