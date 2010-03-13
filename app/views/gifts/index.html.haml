@@ -21,7 +21,7 @@
       = link_to "Edit Page", edit_page_path(@page)
 
 #goal_meter
-  = render :partial => 'goal_meter'
+  = render :partial => 'goal_meter' if APP_CONFIG['gift_registry_goal'] > 0
 
 - form_tag("https://www.paypal.com/cgi-bin/webscr") do
   = hidden_field_tag :cmd, "_s-xclick"
