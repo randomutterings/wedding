@@ -51,7 +51,7 @@ Edit it for your environment and migrate the database.
 
 == Usage
 
-Once you have the site setup, go to http://your-domain.com/login and enter the password from your config/config.yml.
+Once you have the site setup, go to http://your-domain.com/login and enter the password from your config/config.yml.  Also, you'll want to edit public/images/names.png with a graphics editor and change the names.
 
 == Database backup to Amazon S3
 

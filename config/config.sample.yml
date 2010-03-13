@@ -1,7 +1,3 @@
-# name the bride and groom
-bride: The Bride
-groom: The Groom
-
 # how much many do you want to raise?
 # putting 0 here will disable this functionality
 gift_registry_goal: 5000.00

@@ -37,19 +37,14 @@ img.bg {
   top: 0;
   left: 0; }
 
-@font-face {
-  font-family: 'BickhamScriptProSemibold';
-  src: url('fonts/BickhamScriptPro-Semibold.eot');
-  src: local('Bickham Script Pro'), local('BickhamScriptPro-Semibold'), url('fonts/BickhamScriptPro-Semibold.woff') format('woff'), url('fonts/BickhamScriptPro-Semibold.ttf') format('truetype'), url('fonts/BickhamScriptPro-Semibold.svg#BickhamScriptPro-Semibold') format('svg'); }
-
 #header {
   background: #ffffff url('/images/header.png') no-repeat top;
   height: 250px;
   text-align: center;
   padding-top: 60px;
-  margin-bottom: 40px;
-  font-family: BickhamScriptProSemibold;
-  font-size: 60px; }
+  margin-bottom: 40px; }
+  #header img {
+    border: none; }
 
 #footer {
   background: #ffffff url('/images/footer.png') no-repeat bottom;
