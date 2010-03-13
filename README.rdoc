@@ -22,6 +22,10 @@ Install RedCloth if your server doesn't have at least 4.2.3.
 Install Chronic if your server doesn't have at least 0.2.3.
 
   gem install chronic
+  
+Install Haml if your server doesn't have at least 2.0.7
+
+  gem install haml
 
 Move the config sample file.
 
@@ -37,6 +41,7 @@ Move the database sample file.
 
 Edit it for your environment and migrate the database.
 
+  rake db:create
   rake db:migrate RAILS_ENV=production
 
 
