@@ -53,7 +53,7 @@ Once you have the site setup, go to http://your-domain.com/login and enter the p
 
 To backup your database to Amazon S3, run the following from project root or set it up as a cron job to run automatically.  The following example keeps the last 3 backups in S3
 
-  rake db:backup RAILS_ENV=production MAX=3
+  rake db:backup RAILS_ENV=production
 
 If you ever need to restore the database, use the tool of your choice to download the backup from S3 and run.
 
