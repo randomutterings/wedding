@@ -27,6 +27,10 @@ Install Haml if your server doesn't have at least 2.0.7
 
   gem install haml
 
+If you want to use the included rake task to backup your database to S3, install the aws-s3 library
+
+  gem install aws-s3
+
 Move the config sample file.
 
   mv config/config.sample.yml config/config.yml
