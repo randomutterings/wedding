@@ -68,6 +68,12 @@ Make sure your database.yml is configured for your environment and run
 
   rake db:migrate RAILS_ENV=production.
 
+<b>I get "cannot create ./tmp/production_dump-YYYY-MM-DD_HH-MM-SS.sql.gz: Directory nonexistent" when running the database backup to S3</b>
+
+You need to create a tmp directory in the root.
+
+  mkdir tmp
+
 <b>Another problem?</b>
 
 Make sure you're using Rails 2.3.5.
