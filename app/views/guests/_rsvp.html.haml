@@ -1,6 +1,6 @@
-.rsvp
+.fields
   %p
     = f.collection_select(:event_id, Event.find(:all, :conditions => ['rsvp = ?', true]), :id, :title)
     = f.text_field :attending, :class => "integer_field"
     attending
-    = remove_link_unless_new_record(f, "Event")
+    = remove_child_link "Remove Event", f
