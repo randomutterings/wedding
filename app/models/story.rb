@@ -1,14 +1,13 @@
 class Story < ActiveRecord::Base
   require 'chronic'
-  attr_accessible :title, :body, :published_on, :published_on_string
-  attr_accessor :published_on_string
+  attr_accessible :title, :body, :published_on
   validates_presence_of :title, :body
   
   def validate
-    if date = Chronic.parse(self.published_on_string)
+    if date = Chronic.parse(self.published_on)
       self.published_on = date.to_s(:db)
     else
-      self.errors.add :published_on_string, "was not a proper date"
+      self.errors.add :published_on, "was not a proper date"
     end
   end
   

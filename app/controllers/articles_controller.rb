@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   
   def new
     @article = Article.new
-    @published_on = Date.today
+    @article.published_on = Date.today
   end
   
   def create
@@ -25,7 +25,6 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
-    @published_on = @article.published_on
   end
   
   def update

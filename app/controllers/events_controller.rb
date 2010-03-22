@@ -2,23 +2,16 @@ class EventsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
   def index
     @events = Event.all
-    if params[:date].nil?
-      @date = Date.today
-    else
-      @date = params[:date].to_date
-    end
   end
   
   def show
     @event = Event.find(params[:id])
-    from = Time.parse("#{@event.scheduled_at.to_date} 00:00:00")
-    to = Time.parse("#{@event.scheduled_at.to_date} 23:59:59")
-    @events = Event.find(:all, :conditions => ["scheduled_at BETWEEN ? and ?", from, to])
+    @events = Event.find_for_date(@event.scheduled_at.to_date)
   end
   
   def new
     @event = Event.new
-    @scheduled_at = Time.now.strftime "%b %d at %l:%M %p"
+    @event.scheduled_at = Time.now.strftime "%b %d at %l:%M %p"
   end
   
   def create
@@ -33,7 +26,7 @@ class EventsController < ApplicationController
   
   def edit
     @event = Event.find(params[:id])
-    @scheduled_at = @event.scheduled_at_formatted("chronic")
+    @event.scheduled_at = @event.scheduled_at_formatted("chronic")
   end
   
   def update

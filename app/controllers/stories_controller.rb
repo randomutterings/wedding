@@ -10,7 +10,7 @@ class StoriesController < ApplicationController
   
   def new
     @story = Story.new
-    @published_on = Date.today
+    @story.published_on = Date.today
   end
   
   def create
@@ -25,7 +25,6 @@ class StoriesController < ApplicationController
   
   def edit
     @story = Story.find(params[:id])
-    @published_on = @story.published_on
   end
   
   def update

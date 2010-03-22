@@ -4,20 +4,6 @@ class GiftsController < ApplicationController
   def index
     @gifts = Gift.all
     @page = Page.find_by_permalink("gifts")
-    if APP_CONFIG['gift_registry_goal'] > 0
-      total_in_cents = @gifts.map(&:amount).sum
-      @total = total_in_cents.to_r.to_d / 100
-      goal_in_cents = (APP_CONFIG['gift_registry_goal'] * 100).to_i
-      @goal = goal_in_cents.to_r.to_d / 100
-      @height = (((total_in_cents * 100) / goal_in_cents) * 300) / 100
-      @margin_top = 300 - @height.to_i
-      @percentage_collected = (total_in_cents * 100) / goal_in_cents
-      @goal_left = (goal_in_cents - total_in_cents) / 100
-      if @percentage_collected > 99
-        @height = 300
-        @margin_top = 0
-      end
-    end
   end
   
   def show
@@ -29,11 +15,9 @@ class GiftsController < ApplicationController
   end
   
   def create
-    
     # if txn_id is nil then the payment form was submitted, process normally
     if params[:txn_id].nil?
-      @gift = Gift.new(params[:gift])
-      
+      @gift = Gift.new(params[:gift])     
     # else the payment was posted from paypal
     else
       @gift = Gift.new
