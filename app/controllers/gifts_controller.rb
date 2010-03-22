@@ -17,6 +17,7 @@ class GiftsController < ApplicationController
   def create
     # if txn_id is nil then the payment form was submitted, process normally
     if params[:txn_id].nil?
+      params[:gift][:amount] = (params[:gift][:amount].to_f * 100) unless (params[:gift][:amount] =~ /\./).nil?
       @gift = Gift.new(params[:gift])     
     # else the payment was posted from paypal
     else
