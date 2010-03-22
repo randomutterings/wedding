@@ -61,7 +61,8 @@ To backup your database to Amazon S3, run the following from project root or set
 
 Optionally put this in a crontab to run the backup automatically.
 
-  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake db:backup RAILS_ENV=production
+  # Full backup every Wednesday at 11:01
+  1 23 * * 3  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake db:backup RAILS_ENV=production
 
 If you ever need to restore the database, use the tool of your choice to download the backup from S3 and run.
 
@@ -75,7 +76,8 @@ To backup everything in the public folder to Amazon S3, run the following from p
 
 Optionally put this in a crontab to run the backup automatically.
 
-  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake assets:backup
+  # Full backup every Wednesday at 11:01
+  1 23 * * 3  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake assets:backup
 
 
 == Troubleshooting and FAQs
