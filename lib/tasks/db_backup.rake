@@ -1,5 +1,4 @@
 # credit to http://www.magnionlabs.com/2009/7/7/db-backups
-# also checkout http://github.com/xaviershay/db2s3
 
 require 'find'
 require 'ftools'
