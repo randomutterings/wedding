@@ -10,7 +10,7 @@ namespace :assets do
 
     datestamp = Time.now.strftime("%Y-%m-%d_%H-%M-%S")
     base_path = ENV["RAILS_ROOT"] || "." 
-    file_name = "#{RAILS_ENV}_assets-#{datestamp}.tgz" 
+    file_name = "assets-#{datestamp}.tgz" 
     backup_file = File.join(base_path, "tmp", file_name)
     sh "tar -cvzpf #{backup_file} public"
     AWS::S3::S3Object.store(file_name, open(backup_file), BUCKET)
