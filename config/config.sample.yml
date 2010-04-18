@@ -7,11 +7,3 @@ password: secret
 
 # paypal ipn information
 paypal_button_id: PAYPALHOSTEDBUTTONID
-
-# amazon aws credentials
-# used for offsite database backups
-access_key_id: your-key-id-from-aws
-secret_access_key: your-secret-access-key-from-aws
-bucket: existing-bucket-name
-database_backups_to_keep: 8
-asset_backups_to_keep: 3

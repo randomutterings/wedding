@@ -2,7 +2,6 @@
 
 A wedding site with news articles, events calendar with rsvp, paypal integrated donation meter, wedding party members, wedding stories, and static pages.
 
-
 == Install
 
 Clone the git repository.
@@ -31,6 +30,8 @@ If you want to use the included rake task to backup your database to S3, install
 
   gem install aws-s3
 
+and edit config/s3_backup_config.yml with your s3 information
+
 Move the config sample file.
 
   mv config/config.sample.yml config/config.yml
@@ -48,7 +49,6 @@ Edit it for your environment and migrate the database.
   rake db:create
   rake db:migrate RAILS_ENV=production
 
-
 == Usage
 
 Once you have the site setup, go to http://your-domain.com/login and enter the password from your config/config.yml.  Also, you'll want to edit public/images/names.png with a graphics editor and change the names.
@@ -61,12 +61,12 @@ To backup your database to Amazon S3, run the following from project root or set
 
 Optionally put this in a crontab to run the backup automatically.
 
-  # Full backup every Wednesday at 11:01
-  1 23 * * 3  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake db:backup RAILS_ENV=production
+  # Full backup every dat at 11:01
+  1 23 * * *  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake db:backup RAILS_ENV=production
 
-If you ever need to restore the database, use the tool of your choice to download the backup from S3 and run.
+To restore the production database run
 
-  gzip -dc production_dump-YYYY-MM-DD_HH-MM-SS.sql.gz | mysql -u root -p <production database>
+  rake db:restore RAILS_ENV=production
 
 == Asset backup to Amazon S3
 
@@ -76,9 +76,12 @@ To backup everything in the public folder to Amazon S3, run the following from p
 
 Optionally put this in a crontab to run the backup automatically.
 
-  # Full backup every Wednesday at 11:01
-  1 23 * * 3  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake assets:backup
+  # Full backup every Wednesday at 11:30
+  30 23 * * 3  cd /path/to/your/project && /var/lib/gems/1.8/bin/rake assets:backup
 
+To restore the public directory run
+
+  rake assets:restore
 
 == Troubleshooting and FAQs
 
@@ -98,13 +101,11 @@ You need to create a tmp directory in the root.
 
 Make sure you're using Rails 2.3.5.
 
-
 == Found a bug?
 
 If you are having a problem with the site, first look at the FAQs above. If you still cannot resolve it, please submit an issue here.
 
 http://github.com/randomutterings/wedding/issues
-
 
 == Rails 3
 

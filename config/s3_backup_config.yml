@@ -1,0 +1,11 @@
+# amazon aws credentials
+access_key_id: your-aws-access-key-id
+secret_access_key: your-aws-secret-access-key
+
+# bucket you would like to use for backups
+bucket: your_existing_s3_bucket
+
+# how many backups would you like to keep for
+# the database and public folder
+database_backups_to_keep: 8
+assets_backups_to_keep: 3
