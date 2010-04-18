@@ -37,7 +37,7 @@ namespace :db do
     db_config = ActiveRecord::Base.configurations[RAILS_ENV]
     AWS::S3::Base.establish_connection!(:access_key_id => S3_CONFIG['access_key_id'], :secret_access_key => S3_CONFIG['secret_access_key'])
     bucket_name = S3_CONFIG['bucket']
-    backups = AWS::S3::Bucket.objects(bucket_name)
+    backups = AWS::S3::Bucket.objects(bucket_name).select { |f| f.key.match(/dump/) }
     if backups.size == 0
       puts "no backups available, check your settings in config/s3_backup_config.yml"
     else

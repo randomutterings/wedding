@@ -35,7 +35,7 @@ namespace :assets do
     base_path = ENV["RAILS_ROOT"] || "." 
     AWS::S3::Base.establish_connection!(:access_key_id => S3_CONFIG['access_key_id'], :secret_access_key => S3_CONFIG['secret_access_key'])
     bucket_name = S3_CONFIG['bucket']
-    backups = AWS::S3::Bucket.objects(bucket_name)
+    backups = AWS::S3::Bucket.objects(bucket_name).select { |f| f.key.match(/assets/) }
     if backups.size == 0
       puts "no backups available, check your settings in config/s3_backup_config.yml"
     else
