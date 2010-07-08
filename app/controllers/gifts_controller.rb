@@ -23,7 +23,7 @@ class GiftsController < ApplicationController
     else
       @gift = Gift.new
       @gift.name = "#{params[:first_name]} #{params[:last_name]}"
-      @gift.amount = (params[:mc_gross].to_r.to_d * 100).to_i
+      @gift.amount = (params[:mc_gross].to_d * 100).to_i
       @gift.status = params[:payment_status]
       @gift.txn_id = params[:txn_id]
       @gift.receiver_email = params[:receiver_email]
