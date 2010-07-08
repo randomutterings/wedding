@@ -37,17 +37,17 @@ class GiftsController < ApplicationController
         @gift.address_status = params[:address_status]
         @gift.address_street = params[:address_street]
         @gift.address_zip = params[:address_zip]
+        if @gift.save
+          flash[:notice] = "Thank you for your gift!"
+          redirect_to gifts_url
+        else
+          render :action => 'new'
+        end
       #else there's a duplicate
       else
         flash[:notice] = "Thank you for your gift!"
         redirect_to gifts_url
       end
-    end
-    if @gift.save
-      flash[:notice] = "Thank you for your gift!"
-      redirect_to gifts_url
-    else
-      render :action => 'new'
     end
   end
   
