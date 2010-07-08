@@ -21,20 +21,27 @@ class GiftsController < ApplicationController
       @gift = Gift.new(params[:gift])     
     # else the payment was posted from paypal
     else
-      @gift = Gift.new
-      @gift.name = "#{params[:first_name]} #{params[:last_name]}"
-      @gift.amount = (params[:mc_gross].to_d * 100).to_i
-      @gift.status = params[:payment_status]
-      @gift.txn_id = params[:txn_id]
-      @gift.receiver_email = params[:receiver_email]
-      @gift.payer_email = params[:payer_email]
-      @gift.address_city = params[:address_city]
-      @gift.address_country = params[:address_country]
-      @gift.address_name = params[:address_name]
-      @gift.address_state = params[:address_state]
-      @gift.address_status = params[:address_status]
-      @gift.address_street = params[:address_street]
-      @gift.address_zip = params[:address_zip]
+      #if there is no duplicate
+      if Gift.find_by_txn_id(params[:txn_id]).nil?
+        @gift = Gift.new
+        @gift.name = "#{params[:first_name]} #{params[:last_name]}"
+        @gift.amount = (params[:mc_gross].to_d * 100).to_i
+        @gift.status = params[:payment_status]
+        @gift.txn_id = params[:txn_id]
+        @gift.receiver_email = params[:receiver_email]
+        @gift.payer_email = params[:payer_email]
+        @gift.address_city = params[:address_city]
+        @gift.address_country = params[:address_country]
+        @gift.address_name = params[:address_name]
+        @gift.address_state = params[:address_state]
+        @gift.address_status = params[:address_status]
+        @gift.address_street = params[:address_street]
+        @gift.address_zip = params[:address_zip]
+      #else there's a duplicate
+      else
+        flash[:notice] = "Thank you for your gift!"
+        redirect_to gifts_url
+      end
     end
     if @gift.save
       flash[:notice] = "Thank you for your gift!"
