@@ -1,6 +1,6 @@
 .fields
   %p
-    = f.collection_select(:event_id, Event.find(:all, :conditions => ['rsvp = ?', true]), :id, :title)
+    = f.collection_select(:event_id, Event.find(:all, :conditions => ['rsvp = ?', true]).sort_by{|e| e.scheduled_at}, :id, :title)
+    Number of guests attending
     = f.text_field :attending, :class => "integer_field"
-    attending
     = remove_child_link "Remove Event", f
