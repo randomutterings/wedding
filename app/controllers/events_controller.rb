@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
   def index
-    @events = Event.all
+    @events = Event.all.sort_by{|e| e.scheduled_at}
   end
   
   def show

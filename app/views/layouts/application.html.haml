@@ -25,7 +25,7 @@
           %p= link_to "Wedding Party", members_path
           %p= link_to "Gift Registry", gifts_path
           %p= link_to "RSVP", new_guest_path
-          - @pages = Page.all.each do |page|
+          - @pages = Page.all.sort_by{|p| p.name}.each do |page|
             %p= link_to page.name, page_permalink_path(page.permalink) unless page.permalink == "home" || page.permalink == "gifts"
           - if admin?
             %p= link_to "Extra Pages", pages_path
