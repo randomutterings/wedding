@@ -11,7 +11,8 @@
 %p.indented
   - @guest.rsvps.each do |r|
     = r.attending
-    = Event.find(r.event_id).title
+    = Event.find(r.event_id).title unless r.event_id.nil?
+    = r.message
     %br
 
 %p

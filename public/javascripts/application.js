@@ -5,7 +5,8 @@ $(function() {
     var regexp  = new RegExp('new_' + assoc, 'g');
     var new_id  = new Date().getTime();
         
-    $(this).parent().before(content.replace(regexp, new_id));    
+    $(this).parent().before(content.replace(regexp, new_id));
+  	clickHandlers();
     return false;
   });
   
@@ -17,4 +18,10 @@ $(function() {
     $(this).parents('.fields').hide();
     return false;
   });
+});
+
+// rsvp not attending link
+$('form a.not_attending').live('click', function() {
+	$(this).prev().prev().val("1").prev().val("0").hide().prev().hide().prev('.message').show();
+	$(this).hide();
 });

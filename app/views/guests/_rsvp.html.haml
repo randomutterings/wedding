@@ -1,6 +1,13 @@
 .fields
   %p
     = f.collection_select(:event_id, Event.find(:all, :conditions => ['rsvp = ?', true]).sort_by{|e| e.scheduled_at}, :id, :title)
-    Number of guests attending
+    .message
+      = f.label :message, "Message (Optional)"
+      %br
+      = f.text_area :message
+    %span Number of guests attending
     = f.text_field :attending, :class => "integer_field"
+    = f.hidden_field :not_attending, :value => "0"
+    %br
+    = link_to "Not attending", "javascript:void();", :class => "not_attending"
     = remove_child_link "Remove Event", f
